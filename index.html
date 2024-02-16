@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>document</title>
+    <style>
+        .results {
+            border: black 2px solid;
+            background-color: greenyellow;
+            text-align: left;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="results">
+Reverse teksten her: <input type="text" name="inputText" id="inputText" required>
+<button type="button" onclick="reverseString()">Submit</button>
+    <p id="reverseStringResult"></p>
+    <p id="result"></p>
+</div>
+</div>
+    
+        <script>
+           function reverseString(){
+            input = document.getElementById('inputText').value;
+            if(input == ''){
+            document.getElementById('reverseStringResult').innerHTML = '';
+            document.getElementById('result').style.color = "red";
+            document.getElementById('result').innerHTML = "Gjerne skriv noe først!";
+            return;
+           }
+           
+           let reverseResult = "";
+           document.getElementById('result').innerHTML = '';
+           for(var i = input.length -1; i >= 0; i--){
+            reverseResult = reverseResult + input[i];
+           }
+    
+           document.getElementById('reverseStringResult').innerHTML = '' + reverseResult;
+        }
+        </script>
+    </body>
+</html>
